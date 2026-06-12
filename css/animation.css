@@ -1,0 +1,36 @@
+@keyframes bg-move-place {
+    100% {
+        background-image: url("../images/place-bg-2.jpg");
+    }
+}
+
+@keyframes bg-move-order {
+    100% {
+        background-image: url("../images/order-bg-2.jpg");
+    }
+}
+
+@keyframes bg-move-hero {
+    100% {
+        background-image: url("../images/hero-bg-2.jpg");
+    }
+}
+
+@keyframes bg-move-book {
+    100% {
+        background-image: url("../images/book-2.jpg");
+    }
+}
+
+@keyframes bg-move-title {
+    100% {
+        background-image: url("../images/bg-wide-2.jpg");
+    }
+}
+
+@keyframes disappear {
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1.5);
+    }
+}

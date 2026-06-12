@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>nosetalgia - главная</title>
+        <link href="css/style.css" rel="stylesheet">
+        <script src="js/popups.js"></script>
+        <script src="js/cart.js"></script>
+        <script src="js/animations.js"></script>
+        <script src="js/script.js"></script>
+        <link rel="icon" type="image/png" href="images/favicon.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <header class="header">
+            <a href="/"><img class="logo-header" src="images/logo.svg"></a>
+            <nav class="menu-header">
+                <a class="menu-item" href="/#order">онлайн-заказ</a>
+                <a class="menu-item" href="events.html">события</a>
+                <a class="menu-item" href="place.html">пространство</a>
+                <a class="menu-item" href="merch.html">мерч</a>
+            </nav>
+            <a href="cart.html" class="cart-header"></a>
+        </header>
+
+        <section id="cart" class="container container-pages">
+            <div class="container-star">
+                <img class="star" src="images/star.svg">
+                <h2>Корзина</h2>
+                <img class="star" src="images/star.svg">
+            </div>
+            <div id="cart-list" class="container-cards"></div>
+        </section>
+
+        <section class="container container-pages">
+            <div class="empty-cart">Корзина пуста</div>
+        </section>
+
+        <section id="cart-order" class="container container-pages hidden">
+            <div>Итого к оплате:</div>
+            <div id="price-cart" class="price-cart">1000 ₽</div>
+            <a class="button big-button button-solid button-cart">Оформить заказ</a>
+        </section>
+
+        <footer id="footer">
+            <nav class="footer-left">
+                <a class="menu-item" href="/">главная</a>
+                <a class="menu-item" href="/#order">онлайн-заказ</a>
+                <a class="menu-item" href="events.html">события</a>
+                <a class="menu-item" href="place.html">пространство</a>
+                <a class="menu-item" href="merch.html">мерч</a>
+                <a class="menu-item" href="cart.html">корзина</a>
+            </nav>
+            <img class="logo-footer" src="images/logo.svg">
+            <div class="footer-right">
+                <div class="contacts">
+                    <div class="text">8 (846) 000-00-00</div>
+                    <div class="text">nosetalgia@mail.ru</div>
+                    <div class="text">г. Самара, ул. Звездная, 85</div>
+                </div>
+                <a class="author" href="https://t.me/linasalt">Ангелина Солдатенко БП25ДЗ11</a>
+            </div>
+        </footer>
+
+        <div class="popup-overlay cart-popup hidden">
+            <div class="popup">
+                <img id="close-popup-event" class="close-popup" src="images/cross.svg">
+                <div class="popup-title">Оформление заказа</div>
+                <div class="form-text">Сумма заказа: <span id="amount">0 ₽</span></div>
+                <form class="form">
+                    <input type="text" name="name" placeholder="Имя" required>
+                    <input type="tel" name="tel" placeholder="Телефон" required>
+                    <input type="email" name="email" placeholder="E-mail" required>
+                    <input type="text" name="adress" placeholder="Адрес доставки" required>
+                    <div class="payment-choice">
+                        <div>Способ оплаты: </div>
+                        <div class="labels">
+                            <input class="radio" type="radio" name="payment" id="online" required>
+                            <label class="radio-label" for="online">Онлайн</label>
+                        </div>
+                        <div class="labels">
+                            <input class="radio" type="radio" name="payment" id="offline" required>
+                            <label class="radio-label" for="offline">Курьеру при получении</label>
+                        </div>
+                    </div>
+                    <button class="button big-button button-solid form-button" type="submit">Оформить заказ</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
