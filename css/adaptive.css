@@ -1,0 +1,458 @@
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+
+    /* ₊˚⊹♡ containers ♡⊹˚₊ */
+
+    .header {
+        padding: 16px 20px;
+    }
+
+    .menu-header {
+        gap: 40px;
+    }
+
+    .container {
+        padding: 60px 20px;
+    }
+
+    .filled-container {
+        min-height: 540px;
+    }
+
+    .container.container-pages {
+        padding: 0px 20px;
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+
+    .hero {
+        gap: 32px;
+    }
+
+    .container-order {
+        width: 50%;
+        gap: 32px;
+    }
+
+    .container-place {
+        width: 50%;
+        gap: 32px;
+    }
+
+    .container-cards {
+        margin-top: 40px;
+        margin-bottom: 40px;
+        gap: 20px;
+    }
+
+    .card-event-place {
+        width: 100%;
+    }
+
+    .card-merch {
+        position: relative;
+        width: calc(50% - 10px)
+    }
+
+    .container-card-event-place {
+        padding: 20px;
+    }
+
+    .container-card-merch {
+        padding: 20px;
+    }
+
+    #footer {
+        background-color: #EDD6CB;
+        border-radius: 30px 30px 0 0;
+        padding: 32px 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .footer-left {
+        width: 33%;
+    }
+
+    .footer-right {
+        width: 33%;
+    }
+
+    /* ₊˚⊹♡ text ♡⊹˚₊ */
+
+    h1 {
+        font-size: 100px;
+    }
+
+    h2, .price-cart {
+        font-size: 40px;
+    }
+
+    .page-title {
+        padding: 32px 20px;
+        font-size: 60px;
+    }
+
+    .empty-cart {
+        text-align: center;
+        font-size: 20px;
+        min-height: 60vh;
+    }
+
+    .text-404 {
+        font-size: 60px;
+    }
+
+    /* ₊˚⊹♡ images ♡⊹˚₊ */
+
+    .star {
+        width: 36px;
+        height: 46px;
+    }
+
+    .img-card-event-place {
+        width: 260px;
+    }
+
+    .img-card-merch-overlay:active {
+        opacity: 1;
+    }
+
+    .logo-header {
+        width: 130px;
+    }
+
+    /* ₊˚⊹♡ buttons ♡⊹˚₊ */
+
+    .big-button {
+        width: 280px;
+        height: 50px;
+        border-radius: 30px;
+    }
+
+    .button-event {
+        width: 275px;
+        height: 40px;
+    }
+
+    /* ₊˚⊹♡ forms ♡⊹˚₊ */
+
+    .form {
+        gap: 6px;
+        width: 100%;
+    }
+
+    input {
+        height: 50px;
+    }
+
+    .form-button {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    /* ₊˚⊹♡ containers ♡⊹˚₊ */
+
+    body {
+        font-size: 12px;
+    }
+
+    .header {
+        z-index: 999;
+        padding: 12px 12px;
+    }   
+
+    .menu-header {
+        display: none;
+    }
+
+    .container {
+        padding: 40px 12px;
+    }
+
+    .filled-container {
+        border-radius: 20px;
+        min-height: 520px;
+    }
+
+    .container.container-pages {
+        padding: 0px 12px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .hero {
+        gap: 24px;
+    }
+
+    #place {
+        background-image: url("../images/place-bg-mobile.jpg");
+        animation: none;
+    }
+
+    #cart-order {
+        gap: 12px;
+    }
+
+    .container-order {
+        width: 100%;
+        gap: 24px;
+    }
+
+    .container-place {
+        width: 100%;
+        gap: 24px;
+    }
+
+    .container-cards {
+        margin-top: 24px;
+        margin-bottom: 24px;
+        gap: 12px;
+    }
+
+    .card {
+        border-radius: 12px;
+    }
+
+    .card-event-place {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        padding-top: 16px;
+    }
+
+    .card-merch {
+        width: 100%;
+    }
+
+    .container-card-event-place {
+        gap: 24px;
+        padding: 16px;
+        width: 100%;
+    }
+
+    .container-card-merch {
+        padding: 16px;
+        gap: 8px;
+    }
+
+    .container-heading-card-event-place {
+        gap: 12px;
+    }
+
+    .container-button-card-event {
+        gap: 12px;
+    }
+
+    #footer {
+        border-radius: 20px 20px 0 0;
+        padding: 40px 12px;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .footer-left {
+        display: none;
+    }
+
+    .footer-right {
+        text-align: center;
+        width: 100%;
+        gap: 40px;
+    }
+
+    .contacts {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .header-buttons-container {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
+
+    #book {
+        background-image: url("../images/book-mobile.jpg");
+        animation: none;
+    }
+
+    .card-event {
+        padding-top: 0 !important;
+    }
+
+    /* ₊˚⊹♡ text ♡⊹˚₊ */
+
+    h1 {
+        font-size: 40px;
+    }
+
+    h2, .price-cart {
+        text-align: center;
+        font-size: 24px;
+    }
+
+    .page-title {
+        padding: 16px 12px;
+        border-radius: 20px;
+        font-size: 32px;
+    }
+
+    .popup-title {
+        font-size: 24px;
+        width: 100%;
+    }
+
+    .date {
+        width: fit-content;
+        padding: 6px 16px;
+    }
+
+    .card-heading {
+        font-size: 14px;
+    }
+
+    .price {
+        font-size: 16px;
+    }
+
+    .empty-cart {
+        font-size: 16px;
+        min-height: 440px;
+    }
+
+    .text-404 {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .burger {
+        display: block;
+        background-image: url("../images/burger.svg");
+        background-position: center center;
+        background-size: contain;
+        width: 20px;
+        height: 16px;
+    }
+
+    .h2-order {
+        text-align: left;
+    }
+
+    /* ₊˚⊹♡ images ♡⊹˚₊ */
+
+    .star {
+        width: 21px;
+        height: 27px;
+    }
+
+    .img-card-event-place {
+        width: 160px;
+        border-radius: 12px;
+    }
+
+    .img-card-merch {
+        width: 100%;
+        border-radius: 20px;
+    }
+
+    .img-card-place {
+        width: 100% !important;
+    }
+
+    .logo-header {
+        width: 100px;
+    }
+
+    .logo-footer {
+        width: 120px;
+        align-self: center;
+    }
+
+    /* ₊˚⊹♡ buttons ♡⊹˚₊ */
+
+    .big-button {
+        width: 220px;
+        height: 45px;
+    }
+
+    .button-event {
+        height: 35px;
+        border-radius: 8px;
+    }
+
+    .cart-header {
+        width: 32px;
+        height: 32px;
+    }
+
+    .cart-card {
+        width: 32px;
+        height: 32px;
+    }
+
+    .delete-card {
+        width: 32px;
+        height: 32px;
+    }
+
+    /* ₊˚⊹♡ forms ♡⊹˚₊ */
+
+    .form {
+        gap: 4px;
+        width: 100%;
+    }
+
+    input {
+        height: 45px;
+    }
+
+    .form-text {
+        width: 100%;
+    }
+
+    .form-button {
+        width: 100%;
+    }
+
+    .container-date-form {
+        gap: 4px;
+    }
+
+    .radio-label::before {
+        width: 12px;
+        height: 12px;
+    }
+
+    .payment-choice {
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+
+    /* ₊˚⊹♡ pop-ups ♡⊹˚₊ */
+
+
+    .popup {
+        border-radius: 20px;
+        padding: 20px;
+        width: calc(100% - 24px);
+        min-width: 0;
+        gap: 16px;
+    }
+
+    .close-popup {
+        width: 16px;
+        position: absolute;
+        right: 0;
+        top: -20px;
+    }
+
+    /* ₊˚⊹♡ other elements ♡⊹˚₊ */
+
+    .hidden {
+        display: none !important;
+    }
+}

@@ -1,24 +1,3 @@
-function merchHover() {
-    const cards = document.querySelectorAll(".card-merch");
-
-    cards.forEach((card) => {
-        const img = card.querySelector(".img-card-merch");
-
-        if (!img) return;
-
-        const originalSrc = img.getAttribute("src");
-        const hoverSrc = originalSrc.replace(".jpg", "-2.jpg");
-
-        card.addEventListener("mouseenter", () => {
-            img.setAttribute("src", hoverSrc);
-        });
-
-        card.addEventListener("mouseleave", () => {
-            img.setAttribute("src", originalSrc);
-        });
-    });
-}
-
 function createStar(container, x, y) {
     const star = document.createElement("img");
     const randomStar = Math.floor(Math.random() * 3);
@@ -45,20 +24,24 @@ function createStar(container, x, y) {
 }
 
 function heroStars() {
-    const hero = document.getElementById("hero");
-    
+    const hero = document.querySelector("#hero, #hero-404");
+
+    if (!hero) return;
+
     let canCreate = true;
-    if (hero) {
-        hero.addEventListener("mousemove", (e) => {
-            if (!canCreate) return;
-            const rect = hero.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            createStar(hero, x, y);
-            canCreate = false;
-            setTimeout(()=> {
-                canCreate=true;
-            }, 500);
-        });
-    } 
+
+    hero.addEventListener("mousemove", (e) => {
+        if (!canCreate) return;
+
+        const rect = hero.getBoundingClientRect();
+
+        createStar(
+            hero,
+            e.clientX - rect.left,
+            e.clientY - rect.top
+        );
+
+        canCreate = false;
+        setTimeout(() => canCreate = true, 500);
+    });
 }

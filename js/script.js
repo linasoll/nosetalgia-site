@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     closePopup();
     openPopup();
-    merchHover();
+    burgerMenu();
     heroStars();
     addMerchToCart();
     renderCart();

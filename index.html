@@ -24,10 +24,23 @@
                 <a class="menu-item" href="place.html">пространство</a>
                 <a class="menu-item" href="merch.html">мерч</a>
             </nav>
-            <a href="cart.html" class="cart-header"></a>
+            <div class="header-buttons-container">
+                <a href="cart.html" class="cart-header"></a>
+                <div class="burger"></a>
+            </div>
+
+            <div class="burger-menu-overlay hidden">
+                <nav class="burger-menu">
+                    <a class="menu-item" href="index.html">главная</a>
+                    <a class="menu-item" href="index.html#order">онлайн-заказ</a>
+                    <a class="menu-item" href="events.html">события</a>
+                    <a class="menu-item" href="place.html">пространство</a>
+                    <a class="menu-item" href="merch.html">мерч</a>
+                </nav>
+            </div>
         </header>
 
-        <section id="hero" class="filled-container container">
+        <section id="hero" class="hero filled-container container">
             <h1>Nosetalgia</h1>
             <div class="text text-hero">Уникальный парфюм, сохраняющий<br>воспоминания в&nbsp;виде аромата</div>
             <a class="button big-button button-solid" href="#order">Заказать парфюм</a>
@@ -92,6 +105,7 @@
             <div class="container-cards">
                 <div class="card card-merch">
                     <img class="img-card-merch" src="images/bag-brown.jpg">
+                    <img class="img-card-merch img-card-merch-overlay" src="images/bag-brown-2.jpg">
                     <div class="container-card-merch">
                         <div class="card-heading">Шоппер коричневый</div>
                         <div class="container-button-card-merch">
@@ -102,6 +116,7 @@
                 </div>
                 <div class="card card-merch">
                     <img class="img-card-merch" src="images/sweater.jpg">
+                    <img class="img-card-merch img-card-merch-overlay" src="images/sweater-2.jpg">
                     <div class="container-card-merch">
                         <div class="card-heading">Свитер</div>
                         <div class="container-button-card-merch">
@@ -112,6 +127,7 @@
                 </div>
                 <div class="card card-merch">
                     <img class="img-card-merch" src="images/handkerchief.jpg">
+                    <img class="img-card-merch img-card-merch-overlay" src="images/handkerchief-2.jpg">
                     <div class="container-card-merch">
                         <div class="card-heading">Носовой платок</div>
                         <div class="container-button-card-merch">
@@ -122,6 +138,7 @@
                 </div>
                 <div class="card card-merch">
                     <img class="img-card-merch" src="images/tshirt.jpg">
+                    <img class="img-card-merch img-card-merch-overlay" src="images/tshirt-2.jpg">
                     <div class="container-card-merch">
                         <div class="card-heading">Футболка</div>
                         <div class="container-button-card-merch">
@@ -140,7 +157,7 @@
 
         <section id="order" class="filled-container container">
             <div class="container-order">
-                <h2>Заказать парфюм</h2>
+                <h2 class="h2-order">Заказать парфюм</h2>
                 <div class="text">Для оформления заказа запишитесь на&nbsp;онлайн-консультацию или воспользуйтесь нашим <a class="link" href="https://linasoll.github.io/interactive-web-poster-nosetalgia/" target="_blank">конструктором аромата.</a></div>
                 <form class="form">
                     <input type="text" name="name" placeholder="Имя" required>

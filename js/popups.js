@@ -102,3 +102,25 @@ function submitConsultationForm() {
         orderForm.reset();
     });
 }
+
+function burgerMenu() {
+    const burger = document.querySelector(".burger");
+    const menu = document.querySelector(".burger-menu-overlay");
+    const links = document.querySelectorAll(".menu-item")
+
+    burger.addEventListener("click", () => {
+        menu.classList.remove("hidden");
+    })
+
+    links.forEach((link) => {
+        link.addEventListener("click", () => {
+            menu.classList.add("hidden");
+        })
+    })
+
+    menu.addEventListener("click", (e) => {
+        if (e.target === menu) {
+            menu.classList.add("hidden");
+        }
+    });
+}
