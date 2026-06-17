@@ -192,6 +192,8 @@ body {
 
 .header-buttons-container {
     display: flex;
+    width: fit-content;
+    height: fit-content;
 }
 
 /* ₊˚⊹♡ text ♡⊹˚₊ */
