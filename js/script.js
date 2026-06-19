@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     heroStars();
     addMerchToCart();
     renderCart();
+    updateMerchCartIcons();
     submitOrder();
     submitEventForm()
     submitConsultationForm()

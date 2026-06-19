@@ -1,18 +1,65 @@
 function addMerchToCart() {
-    const cartButtons = document.querySelectorAll(".cart-card");
+    if (window.cartHandlerAdded) return;
+    window.cartHandlerAdded = true;
 
-    cartButtons.forEach((button) => {
-        button.addEventListener("click", (e) => {
-            e.stopPropagation();
-            const card = button.closest(".card-merch");
-            if (!card) return;
-            const cardClone = card.cloneNode(true);
-            const cardHTML = cardClone.outerHTML;
-            let cart = JSON.parse(localStorage.getItem("cart")) || [];
-            cart.push(cardHTML);
-            localStorage.setItem("cart", JSON.stringify(cart));
+    document.addEventListener("click", (e) => {
+        const button = e.target.closest(".cart-card, .delete-card");
+        if (!button) return;
+
+        const card = button.closest(".card-merch");
+        if (!card) return;
+
+        if (card.closest("#cart-list")) return;
+
+        e.stopPropagation();
+
+        const productName = card.querySelector(".card-heading")?.textContent.trim();
+        if (!productName) return;
+
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        const isAlreadyInCart = cart.some((cardHTML) => {
+            const temp = document.createElement("div");
+            temp.innerHTML = cardHTML;
+
+            const savedName = temp.querySelector(".card-heading")?.textContent.trim();
+
+            return savedName === productName;
         });
+
+        if (isAlreadyInCart) {
+            cart = cart.filter((cardHTML) => {
+                const temp = document.createElement("div");
+                temp.innerHTML = cardHTML;
+
+                const savedName = temp.querySelector(".card-heading")?.textContent.trim();
+
+                return savedName !== productName;
+            });
+        } else {
+            const cardClone = card.cloneNode(true);
+
+            const cloneButton = cardClone.querySelector(".cart-card, .delete-card");
+
+            if (cloneButton) {
+                cloneButton.classList.remove("delete-card");
+                cloneButton.classList.add("cart-card");
+                cloneButton.removeAttribute("data-index");
+            }
+
+            cart.push(cardClone.outerHTML);
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        updateMerchCartIcons();
+
+        if (document.getElementById("cart-list")) {
+            renderCart();
+        }
     });
+
+    updateMerchCartIcons();
 }
 
 function renderCart() {
@@ -87,15 +134,54 @@ function getCartTotalPrice(cart) {
 }
 
 function deleteCartItem() {
-    const deleteButtons = document.querySelectorAll(".delete-card");
+    const deleteButtons = document.querySelectorAll("#cart-list .delete-card");
 
     deleteButtons.forEach((button) => {
-        button.addEventListener("click", () => {
+        button.addEventListener("click", (e) => {
+            e.stopPropagation();
+
             const index = Number(button.getAttribute("data-index"));
+
             let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
             cart.splice(index, 1);
+
             localStorage.setItem("cart", JSON.stringify(cart));
+
             renderCart();
+            updateMerchCartIcons();
         });
+    });
+}
+
+function updateMerchCartIcons() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const merchCards = document.querySelectorAll(".card-merch");
+
+    merchCards.forEach((card) => {
+        if (card.closest("#cart-list")) return;
+
+        const button = card.querySelector(".cart-card, .delete-card");
+        if (!button) return;
+
+        const productName = card.querySelector(".card-heading")?.textContent.trim();
+        if (!productName) return;
+
+        const isInCart = cart.some((cardHTML) => {
+            const temp = document.createElement("div");
+            temp.innerHTML = cardHTML;
+
+            const savedName = temp.querySelector(".card-heading")?.textContent.trim();
+
+            return savedName === productName;
+        });
+
+        if (isInCart) {
+            button.classList.remove("cart-card");
+            button.classList.add("delete-card");
+        } else {
+            button.classList.remove("delete-card");
+            button.classList.add("cart-card");
+        }
     });
 }
